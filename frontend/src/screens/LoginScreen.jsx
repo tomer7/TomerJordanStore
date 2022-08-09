@@ -6,11 +6,11 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { login, loginGoogle, loginGithub } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
-import {
-   FacebookLoginButton,
-   GoogleLoginButton,
-   GithubLoginButton
-} from 'react-social-login-buttons'
+// import {
+//    FacebookLoginButton,
+//    GoogleLoginButton,
+//    GithubLoginButton
+// } from 'react-social-login-buttons'
 import axios from 'axios'
 
 const LoginScreen = () => {
@@ -77,10 +77,10 @@ const LoginScreen = () => {
                   onChange={(e) => setPassword(e.target.value)}
                ></Form.Control>
             </Form.Group>
-            <Form.Group controlId='socialButtons'>
+            {/* <Form.Group controlId='socialButtons'>
                <GoogleLoginButton onClick={googleFunction} />
                <GithubLoginButton onClick={githubFunction} />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group controlId='signIn'>
                <Button type='submit' variant='primary'>
