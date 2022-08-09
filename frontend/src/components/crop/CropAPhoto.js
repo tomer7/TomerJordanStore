@@ -5,8 +5,8 @@ class CropAPhoto extends React.Component {
    state = {
       imageSrc: '',
       crop: { x: 0, y: 0 },
-      cropSize: { width: 256, height: 256 },
-      zoom: 1.5,
+      cropSize: { width: 400, height: 400 },
+      zoom: 0.1,
       aspect: 1
    }
 

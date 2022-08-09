@@ -1,6 +1,6 @@
 import express from 'express'
 import passport from 'passport'
-import { authUserFromGoogle } from '../controllers/userController.js'
+// import { authUserFromGoogle } from '../controllers/userController.js'
 var router = express.Router()
 
 router.get('/login/success', (req, res) => {

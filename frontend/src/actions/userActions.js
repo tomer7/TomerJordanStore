@@ -64,7 +64,7 @@ export const login = (email, password) => async (dispatch) => {
    }
 }
 
-export const loginGoogle = (googleId) => async (dispatch) => {
+export const loginGoogle = () => async (dispatch) => {
    try {
       dispatch({
          type: 'USER_GOOGLE_REQUEST'
@@ -76,12 +76,9 @@ export const loginGoogle = (googleId) => async (dispatch) => {
          }
       }
 
-      const { data } = await axios.post(
-         '/api/users/login/google-user',
-         { googleId },
-         config
-      )
-
+      const { data } = await axios.post('/userpergoogle')
+      // console.log(data)
+      // localStorage.setItem('google-google', JSON.stringify(data))
       dispatch({
          type: 'USER_GOOGLE_SUCCESS',
          payload: data
@@ -98,6 +95,38 @@ export const loginGoogle = (googleId) => async (dispatch) => {
       })
    }
 }
+
+// export const loginGithub = () => async (dispatch) => {
+//    try {
+//       dispatch({
+//          type: 'USER_GOOGLE_REQUEST'
+//       })
+
+//       const config = {
+//          headers: {
+//             'Content-Type': 'application/json'
+//          }
+//       }
+
+//       const { data } = await axios.post('/userpergithub')
+//       // console.log(data)
+//       // localStorage.setItem('google-google', JSON.stringify(data))
+//       dispatch({
+//          type: 'USER_GOOGLE_SUCCESS',
+//          payload: data
+//       })
+
+//       localStorage.setItem('userInfo', JSON.stringify(data))
+//    } catch (error) {
+//       dispatch({
+//          type: 'USER_GOOGLE_FAIL',
+//          payload:
+//             error.response && error.response.data.message
+//                ? error.response.data.message
+//                : error.message
+//       })
+//    }
+// }
 
 export const register = (name, email, password) => async (dispatch) => {
    try {

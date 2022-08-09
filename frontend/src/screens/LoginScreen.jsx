@@ -4,13 +4,14 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { login, loginGoogle } from '../actions/userActions'
+import { login, loginGoogle, loginGithub } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
-// import {
-//    FacebookLoginButton,
-//    GoogleLoginButton,
-//    GithubLoginButton
-// } from 'react-social-login-buttons'
+import {
+   FacebookLoginButton,
+   GoogleLoginButton,
+   GithubLoginButton
+} from 'react-social-login-buttons'
+import axios from 'axios'
 
 const LoginScreen = () => {
    const [email, setEmail] = useState('')
@@ -37,14 +38,16 @@ const LoginScreen = () => {
       dispatch(login(email, password))
    }
 
-   const googleFunction = async () => {
+   const googleFunction = async (event) => {
+      event.preventDefault()
       window.open('http://localhost:5000/auth/google', '_self')
-
-      //dispatch(loginGoogle('117604387632480319222'))
+      dispatch(loginGoogle())
    }
 
-   const githubFunction = async () => {
-      window.open('http://localhost:5000/auth/github', '_self')
+   const githubFunction = async (event) => {
+      // event.preventDefault()
+      // window.open('http://localhost:5000/auth/github', '_self')
+      // dispatch(loginGithub())
    }
 
    return (
@@ -74,10 +77,10 @@ const LoginScreen = () => {
                   onChange={(e) => setPassword(e.target.value)}
                ></Form.Control>
             </Form.Group>
-            {/* <Form.Group controlId='socialButtons'>
+            <Form.Group controlId='socialButtons'>
                <GoogleLoginButton onClick={googleFunction} />
                <GithubLoginButton onClick={githubFunction} />
-            </Form.Group> */}
+            </Form.Group>
 
             <Form.Group controlId='signIn'>
                <Button type='submit' variant='primary'>

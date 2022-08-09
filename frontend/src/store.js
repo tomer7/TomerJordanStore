@@ -30,6 +30,8 @@ import {
    orderGetAllReducer
 } from './reducers/orderReducers'
 
+// Redux is all about having one Central Data Store :
+// מאגר נתונים מרכזי אחד
 const reducer = combineReducers({
    productList: productListReducer,
    productDetails: productDetailsReducer,

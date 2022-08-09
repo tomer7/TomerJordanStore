@@ -16,6 +16,7 @@
    "author": "Tomer Aminov",
    "license": "ISC",
    "dependencies": {
+      "array.prototype.findlastindex": "^1.2.1",
       "bcryptjs": "^2.4.3",
       "colors": "^1.4.0",
       "cookie-session": "^2.0.0",

@@ -24,7 +24,7 @@ const ProductEditScreen = () => {
    const [countInStock, setCountInStock] = useState(0)
    const [description, setDescription] = useState(0)
    const [uploading, setUploading] = useState(false)
-   const [afterUploading, setAfterUploading] = useState(false)
+   // const [afterUploading, setAfterUploading] = useState(false)
 
    const location = useLocation()
    const navigate = useNavigate()
@@ -74,7 +74,7 @@ const ProductEditScreen = () => {
          const { data } = await axios.post('/api/upload', formData, config)
          setImage(data)
          setUploading(false)
-         setAfterUploading(true)
+         // setAfterUploading(true)
       } catch (error) {
          console.error(error)
          setUploading(false)
@@ -136,13 +136,13 @@ const ProductEditScreen = () => {
 
                   <Form.Group controlId='image'>
                      <Form.Label>Image:</Form.Label>
-                     {/* <Form.Control
+                     <Form.Control
                         className='text-center'
                         type='text'
                         placeholder='Enter image url'
                         value={image}
                         onChange={(e) => setImage(e.target.value)}
-                     ></Form.Control> */}
+                     ></Form.Control>
                      <Form.Control
                         type='file'
                         id='image-file'
@@ -151,7 +151,7 @@ const ProductEditScreen = () => {
                         onChange={uploadFileHandler}
                      />
                      {uploading && <Loader />}
-                     {afterUploading && <CropAPhoto imageUrl={image} />}
+                     {/* {afterUploading && <CropAPhoto imageUrl={image} />} */}
                   </Form.Group>
                   <Form.Group controlId='brand'>
                      <Form.Label>Brand:</Form.Label>
