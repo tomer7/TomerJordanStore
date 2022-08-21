@@ -4,7 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { login, loginGoogle, loginGithub } from '../actions/userActions'
+import { login } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
 // import {
 //    FacebookLoginButton,
@@ -38,28 +38,16 @@ const LoginScreen = () => {
       dispatch(login(email, password))
    }
 
-   const googleFunction = async (event) => {
-      event.preventDefault()
-      window.open('http://localhost:5000/auth/google', '_self')
-      dispatch(loginGoogle())
-   }
-
-   const githubFunction = async (event) => {
-      // event.preventDefault()
-      // window.open('http://localhost:5000/auth/github', '_self')
-      // dispatch(loginGithub())
-   }
-
    return (
       <FormContainer>
          <h1>Sign In</h1>
          {error && <Message variant='danger'>{error}</Message>}
          {loading && <Loader />}
          <Form onSubmit={submitHandler}>
-            <Form.Group controlId='email'>
+            <Form.Group controlId='email' style={{ 'margin-bottom': '20px' }}>
                <Form.Label>Email Address:</Form.Label>
                <Form.Control
-                  className='text-center'
+                  className='text-center inputDesign'
                   type='email'
                   placeholder='Enter email'
                   value={email}
@@ -67,21 +55,19 @@ const LoginScreen = () => {
                ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='password'>
+            <Form.Group
+               controlId='password'
+               style={{ 'margin-bottom': '20px' }}
+            >
                <Form.Label>Password:</Form.Label>
                <Form.Control
-                  className='text-center'
+                  className='text-center inputDesign'
                   type='password'
                   placeholder='Enter password'
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                ></Form.Control>
             </Form.Group>
-            {/* <Form.Group controlId='socialButtons'>
-               <GoogleLoginButton onClick={googleFunction} />
-               <GithubLoginButton onClick={githubFunction} />
-            </Form.Group> */}
-
             <Form.Group controlId='signIn'>
                <Button type='submit' variant='primary'>
                   Sign In

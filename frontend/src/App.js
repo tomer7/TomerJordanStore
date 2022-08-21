@@ -19,40 +19,8 @@ import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/orderListScreen'
 import { useDispatch } from 'react-redux'
-import { loginGoogle } from './actions/userActions'
 
 const App = () => {
-   // const [user, setUser] = useState(null)
-   // const dispatch = useDispatch()
-   // useEffect(() => {
-   //    const getUser = () => {
-   //       fetch('http://localhost:5000/auth/login/success', {
-   //          method: 'GET',
-   //          credentials: 'include',
-   //          headers: {
-   //             Accept: 'application/json',
-   //             'Content-Type': 'application/json',
-   //             'Access-Control-Allow-Credentials': true,
-   //             'Access-Control-Allow-Origin':
-   //                'http://localhost:5000/auth/login/success'
-   //          }
-   //       })
-   //          .then((response) => {
-   //             if (response.status === 200) return response.json()
-   //             throw new Error('Authentication Failed!')
-   //          })
-   //          .then((resObject) => {
-   //             setUser(resObject.user)
-   //             console.log(resObject.user)
-   //             //dispatch(loginGoogle(resObject.user.googleId))
-   //          })
-   //          .catch((err) => {
-   //             console.log(err)
-   //          })
-   //    }
-   //    getUser()
-   // }, [])
-
    return (
       <Router>
          <Header />

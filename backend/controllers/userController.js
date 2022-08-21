@@ -1,7 +1,6 @@
 import AsyncHandler from 'express-async-handler'
 import generateToken from '../utils/generateToken.js'
 import User from '../models/userModel.js'
-import UserPerGoogle from '../models/userPerGoogleModel.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -24,26 +23,6 @@ const authUser = AsyncHandler(async (req, res) => {
       throw new Error('Invalid email or password')
    }
 })
-
-// @desc     Google - Auth user & get token
-// @route     POST  Google
-// @access     Public
-// const authUserFromGoogle = AsyncHandler(async (req, res) => {
-//    const googleId = req.body.googleId
-
-//    const user = await User.findOne({ googleId: googleId })
-//    if (user) {
-//       res.json({
-//          _id: user._id,
-//          name: user.name,
-//          googleId: user.googleId,
-//          token: generateToken(user._id)
-//       })
-//    } else {
-//       res.status(401)
-//       throw new Error('Invalid email or password')
-//    }
-// })
 
 // @desc     Register a new user.
 // @route     POST  /api/users
@@ -135,93 +114,6 @@ const getUsers = AsyncHandler(async (req, res) => {
    res.json(users)
 })
 
-// @desc     Post the user google for now
-// @route     POST  /userpergoogle
-// @access     Public
-const getUsersPerGoogle = AsyncHandler(async (req, res) => {
-   const users = await UserPerGoogle.find({})
-   let user
-   for (let i = 0; i < users.length; i++) {
-      user = users[i]
-   }
-
-   const userExists = await User.findOne({ googleId: user.googleId })
-
-   if (!userExists) {
-      const userNew = await User.create({
-         name: user.name,
-         email: 'haha@walla.com',
-         password: 'hyt6544323',
-         isAdmin: false,
-         googleId: user.googleId
-      })
-      //User.save()
-      if (userNew) {
-         res.status(201).json({
-            _id: userNew._id,
-            name: userNew.name,
-            email: userNew.email,
-            isAdmin: userNew.isAdmin,
-            token: generateToken(userNew._id, userNew.email)
-         })
-      } else {
-         res.status(400)
-         throw new Error('Invalid user data')
-      }
-   } else {
-      res.status(201).json({
-         _id: userExists._id,
-         name: userExists.name,
-         email: userExists.email,
-         isAdmin: userExists.isAdmin,
-         token: generateToken(userExists._id, userExists.email)
-      })
-   }
-})
-
-// @desc     Post the user github for now
-// @route     POST  /userpergithub
-// @access     Public
-// const getUsersPerGithub = AsyncHandler(async (req, res) => {
-//    const users = await UserPerGithub.find({})
-//    let user
-//    for (let i = 0; i < users.length; i++) {
-//       user = users[i]
-//    }
-
-//    const userExists = await User.findOne({ githubId: user.githubId })
-
-//    if (!userExists) {
-//       const userNew = await User.create({
-//          name: user.name,
-//          email: 'haha222@walla.com',
-//          password: 'hyt6544323',
-//          isAdmin: false,
-//          googleId: user.githubId
-//       })
-//       if (userNew) {
-//          res.status(201).json({
-//             _id: userNew._id,
-//             name: userNew.name,
-//             email: userNew.email,
-//             isAdmin: userNew.isAdmin,
-//             token: generateToken(userNew._id, userNew.email)
-//          })
-//       } else {
-//          res.status(400)
-//          throw new Error('Invalid user data')
-//       }
-//    } else {
-//       res.status(201).json({
-//          _id: userExists._id,
-//          name: userExists.name,
-//          email: userExists.email,
-//          isAdmin: userExists.isAdmin,
-//          token: generateToken(userExists._id, userExists.email)
-//       })
-//    }
-// })
-
 // @desc     Delete user
 // @route     DELETE  /api/users/:id
 // @access     Private/Admin
@@ -283,7 +175,6 @@ export {
    getUserProfile,
    updateUserProfile,
    getUsers,
-   getUsersPerGoogle,
    deleteUser,
    getUserById,
    updateUser

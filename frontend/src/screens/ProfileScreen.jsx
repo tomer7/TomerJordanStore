@@ -65,20 +65,23 @@ const ProfileScreen = () => {
             {success && <Message variant='success'>Profile Updated!</Message>}
             {loading && <Loader />}
             <Form onSubmit={submitHandler}>
-               <Form.Group controlId='name'>
+               <Form.Group controlId='name' style={{ 'margin-bottom': '20px' }}>
                   <Form.Label>Name:</Form.Label>
                   <Form.Control
-                     className='text-center'
+                     className='text-center inputDesign'
                      type='name'
                      placeholder='Enter name'
                      value={name}
                      onChange={(e) => setName(e.target.value)}
                   ></Form.Control>
                </Form.Group>
-               <Form.Group controlId='email'>
+               <Form.Group
+                  controlId='email'
+                  style={{ 'margin-bottom': '20px' }}
+               >
                   <Form.Label>Email Address:</Form.Label>
                   <Form.Control
-                     className='text-center'
+                     className='text-center inputDesign'
                      type='email'
                      placeholder='Enter email'
                      value={email}
@@ -86,20 +89,26 @@ const ProfileScreen = () => {
                   ></Form.Control>
                </Form.Group>
 
-               <Form.Group controlId='password'>
+               <Form.Group
+                  controlId='password'
+                  style={{ 'margin-bottom': '20px' }}
+               >
                   <Form.Label>Password:</Form.Label>
                   <Form.Control
-                     className='text-center'
+                     className='text-center inputDesign'
                      type='password'
                      placeholder='Enter password'
                      value={password}
                      onChange={(e) => setPassword(e.target.value)}
                   ></Form.Control>
                </Form.Group>
-               <Form.Group controlId='confirmPassword'>
+               <Form.Group
+                  controlId='confirmPassword'
+                  style={{ 'margin-bottom': '20px' }}
+               >
                   <Form.Label>Confirm Password:</Form.Label>
                   <Form.Control
-                     className='text-center'
+                     className='text-center inputDesign'
                      type='password'
                      placeholder='Confirm password'
                      value={confirmPassword}

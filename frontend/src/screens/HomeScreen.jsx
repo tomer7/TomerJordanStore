@@ -21,12 +21,6 @@ const HomeScreen = () => {
    const { loading, error, products, page, pages } = productList
 
    useEffect(() => {
-      // const fetchProducts = async () => {
-      //   const res = await axios.get('/api/products')
-      //   setProducts(res.data)
-      // }
-      // fetchProducts()
-
       dispatch(listProducts(keyword, pageNumber))
    }, [dispatch, keyword, pageNumber])
 

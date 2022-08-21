@@ -63,3 +63,13 @@ h2 {
    .headerClass {
    }
 }
+
+.inputDesign {
+   border: 2px solid black;
+   border-radius: 10px;
+}
+
+.inputDesign::placeholder {
+   color: #696969;
+   opacity: 0.9;
+}
