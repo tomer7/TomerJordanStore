@@ -154,7 +154,7 @@ const Header = () => {
             color='inherit'
             position='fixed'
          >
-            <Toolbar sx={{ height: '8.5vh' }}>
+            <Toolbar>
                {isMobile ? (
                   <>
                      <div className={classes.AllAppBarMobile}>
@@ -219,8 +219,7 @@ const Header = () => {
                            /> */}
                         </div>
                         <div style={{ width: '35%' }}>
-                           {/* <SearchBox2 /> */}
-                           {window.scrollY}
+                           <SearchBox2 />
                         </div>
 
                         <div
