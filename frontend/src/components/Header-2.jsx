@@ -116,7 +116,7 @@ const Header = () => {
          if (y > window.scrollY) {
             console.log('scrolling up')
             setPositionAppBar('fixed')
-         } else if (0 < window.scrollY) {
+         } else if (y < window.scrollY) {
             console.log('scrolling down')
             setPositionAppBar('absolute')
          }
@@ -154,7 +154,7 @@ const Header = () => {
             color='inherit'
             position='fixed'
          >
-            <Toolbar>
+            <Toolbar sx={{ height: '8.5vh' }}>
                {isMobile ? (
                   <>
                      <div className={classes.AllAppBarMobile}>
