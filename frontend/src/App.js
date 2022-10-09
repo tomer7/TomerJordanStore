@@ -24,8 +24,6 @@ import { useDispatch } from 'react-redux'
 const App = () => {
    return (
       <Router>
-         <h1></h1>
-         <h1></h1>
          <Header2 />
          <main className='py-3'>
             <Container>
