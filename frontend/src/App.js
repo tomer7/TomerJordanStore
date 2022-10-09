@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
+import Header2 from './components/Header-2'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
@@ -23,7 +24,9 @@ import { useDispatch } from 'react-redux'
 const App = () => {
    return (
       <Router>
-         <Header />
+         <h1></h1>
+         <h1></h1>
+         <Header2 />
          <main className='py-3'>
             <Container>
                <Routes>

@@ -5,7 +5,7 @@ import { Image, Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import { logout } from '../actions/userActions'
 import { useLocation, useNavigate, Route } from 'react-router-dom'
 import SearchBox from './SearchBox'
-import logoPhoto from './logo-200.png'
+import logoPhoto from './logo.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons'
@@ -61,7 +61,7 @@ const Header = () => {
             <Container>
                <LinkContainer to='/'>
                   <Navbar.Brand>
-                     <img src={logoPhoto} />
+                     <img height='80px' width='80px' src={logoPhoto} />
                   </Navbar.Brand>
                </LinkContainer>
                <Navbar.Toggle aria-controls='basic-navbar-nav' />
