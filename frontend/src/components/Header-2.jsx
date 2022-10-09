@@ -118,7 +118,7 @@ const Header = () => {
             setPositionAppBar('fixed')
          } else if (y < window.scrollY) {
             console.log('scrolling down')
-            setPositionAppBar('absolute')
+            setPositionAppBar('relative')
          }
          setY(window.scrollY)
       },
@@ -138,7 +138,7 @@ const Header = () => {
       <Box sx={{ flexGrow: 1 }}>
          <AppBar
             sx={
-               positionAppBar == 'absolute'
+               positionAppBar == 'relative'
                   ? {
                        backgroundColor: '#0a192f',
                        transform: 'translateY(-100px)',
