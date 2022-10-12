@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { login } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
+import { TextField } from '@mui/material'
 // import {
 //    FacebookLoginButton,
 //    GoogleLoginButton,
@@ -40,51 +41,56 @@ const LoginScreen = () => {
 
    return (
       <FormContainer>
-         <h1>Sign In</h1>
-         {error && <Message variant='danger'>{error}</Message>}
-         {loading && <Loader />}
-         <Form onSubmit={submitHandler}>
-            <Form.Group controlId='email' style={{ 'margin-bottom': '20px' }}>
-               <Form.Label>Email Address:</Form.Label>
-               <Form.Control
-                  className='text-center inputDesign'
-                  type='email'
-                  placeholder='Enter email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
-
-            <Form.Group
-               controlId='password'
+         <form onSubmit={submitHandler}>
+            <h1>Login</h1>
+            {error && <Message variant='danger'>{error}</Message>}
+            {loading && <Loader />}
+            {/* <h5>Email :</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Email'
+               variant='outlined'
                style={{ 'margin-bottom': '20px' }}
-            >
-               <Form.Label>Password:</Form.Label>
-               <Form.Control
-                  className='text-center inputDesign'
-                  type='password'
-                  placeholder='Enter password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
+               value={email}
+               onChange={(e) => setEmail(e.target.value)}
+               type='email'
+               fullWidth
+               required
+               helperText='Well never share your email.'
+            />
+            {/* <h5>Password :</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Password'
+               variant='outlined'
+               style={{ 'margin-bottom': '20px' }}
+               value={password}
+               onChange={(e) => setPassword(e.target.value)}
+               type='password'
+               fullWidth
+               required
+               helperText='Well never share your password.'
+            />
             <Form.Group controlId='signIn'>
                <Button type='submit' variant='primary'>
                   Sign In
                </Button>
             </Form.Group>
-         </Form>
-
-         <Row className='py-3'>
-            <Col>
-               New Customer?{' '}
-               <Link
-                  to={redirect ? `/register?redirect=${redirect}` : `/register`}
-               >
-                  Register
-               </Link>
-            </Col>
-         </Row>
+            <Row className='py-3'>
+               <Col>
+                  New Customer?{' '}
+                  <Link
+                     to={
+                        redirect
+                           ? `/register?redirect=${redirect}`
+                           : `/register`
+                     }
+                  >
+                     Register
+                  </Link>
+               </Col>
+            </Row>
+         </form>
       </FormContainer>
    )
 }

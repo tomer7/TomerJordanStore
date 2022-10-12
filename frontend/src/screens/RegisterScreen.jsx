@@ -6,6 +6,7 @@ import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { register } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
+import { TextField } from '@mui/material'
 
 const RegisterScreen = () => {
    const [name, setName] = useState('')
@@ -44,53 +45,63 @@ const RegisterScreen = () => {
          {message && <Message variant='danger'>{message}</Message>}
          {error && <Message variant='danger'>{error}</Message>}
          {loading && <Loader />}
-         <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
-               <Form.Label>Name:</Form.Label>
-               <Form.Control
-                  className='text-center'
-                  type='name'
-                  placeholder='Enter name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
-            <Form.Group controlId='email'>
-               <Form.Label>Email Address:</Form.Label>
-               <Form.Control
-                  className='text-center'
-                  type='email'
-                  placeholder='Enter email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId='password'>
-               <Form.Label>Password:</Form.Label>
-               <Form.Control
-                  className='text-center'
-                  type='password'
-                  placeholder='Enter password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
-            <Form.Group controlId='confirmPassword'>
-               <Form.Label>Confirm Password:</Form.Label>
-               <Form.Control
-                  className='text-center'
-                  type='password'
-                  placeholder='Confirm password'
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-               ></Form.Control>
-            </Form.Group>
+         <form onSubmit={submitHandler}>
+            {/* <h5>Name:</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Name'
+               variant='outlined'
+               style={{ 'margin-bottom': '20px' }}
+               value={name}
+               onChange={(e) => setName(e.target.value)}
+               fullWidth
+               required
+               helperText='Your full name.'
+            />
+            {/* <h5>Email:</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Email'
+               variant='outlined'
+               style={{ 'margin-bottom': '20px' }}
+               value={email}
+               onChange={(e) => setEmail(e.target.value)}
+               fullWidth
+               required
+               helperText='Well never share your email.'
+               type='email'
+            />
+            {/* <h5>Password:</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Password'
+               variant='outlined'
+               style={{ 'margin-bottom': '20px' }}
+               value={password}
+               onChange={(e) => setPassword(e.target.value)}
+               type='password'
+               fullWidth
+               required
+               helperText=' '
+            />
+            {/* <h5>Confirm Password:</h5> */}
+            <TextField
+               id='outlined-basic'
+               label='Confirm Password'
+               variant='outlined'
+               style={{ 'margin-bottom': '20px' }}
+               value={confirmPassword}
+               onChange={(e) => setConfirmPassword(e.target.value)}
+               type='password'
+               fullWidth
+               required
+               helperText=' '
+            />
 
             <Button type='submit' variant='primary'>
                Register
             </Button>
-         </Form>
+         </form>
 
          <Row className='py-3'>
             <Col>
