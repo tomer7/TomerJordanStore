@@ -12,6 +12,9 @@ import {
 } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 import Paginate from '../components/Paginate'
+import { FiTrash2 } from 'react-icons/fi'
+import { GrEdit } from 'react-icons/gr'
+import { BsPlusLg } from 'react-icons/bs'
 
 const ProductListScreen = () => {
    const params = useParams()
@@ -80,7 +83,7 @@ const ProductListScreen = () => {
             </Col>
             <Col className='text-right'>
                <Button className='my-3' onClick={createProductHandler}>
-                  <i className='fas fa-plus'></i>Create Product
+                  Create Product
                </Button>
             </Col>
          </Row>
@@ -117,18 +120,27 @@ const ProductListScreen = () => {
                               <LinkContainer
                                  to={`/admin/product/${product._id}/edit`}
                               >
-                                 <Button variant='light' className='btn-sm'>
-                                    <i className='fas fa-edit'></i>
+                                 <Button
+                                    style={{
+                                       borderRadius: '5px',
+                                       fontSize: '18px'
+                                    }}
+                                    variant='light'
+                                 >
+                                    <GrEdit />
                                  </Button>
                               </LinkContainer>
                               <Button
+                                 style={{
+                                    borderRadius: '5px',
+                                    fontSize: '18px'
+                                 }}
                                  variant='danger'
-                                 className='btn-sm'
                                  onClick={() => {
                                     deleteHandler(product._id)
                                  }}
                               >
-                                 <i className='fas fa-trash'></i>
+                                 <FiTrash2 />
                               </Button>
                            </td>
                         </tr>

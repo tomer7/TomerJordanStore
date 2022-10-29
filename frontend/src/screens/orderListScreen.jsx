@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { listAllOrders } from '../actions/orderActions'
+import { FaTimesCircle } from 'react-icons/fa'
+import { GiCheckMark } from 'react-icons/gi'
 
 const OrderListScreen = () => {
    const dispatch = useDispatch()
@@ -56,23 +58,14 @@ const OrderListScreen = () => {
                            {order.isPaid ? (
                               order.paymentResult.update_time.substring(0, 10)
                            ) : (
-                              <i
-                                 className='fas fa-times'
-                                 style={{ color: 'red' }}
-                              ></i>
+                              <FaTimesCircle color='red' />
                            )}
                         </td>
                         <td>
                            {order.isDelivered ? (
-                              <i
-                                 className='fas fa-check'
-                                 style={{ color: 'grren' }}
-                              ></i>
+                              <GiCheckMark color='green' />
                            ) : (
-                              <i
-                                 className='fas fa-times'
-                                 style={{ color: 'red' }}
-                              ></i>
+                              <FaTimesCircle color='red' />
                            )}
                         </td>
                         <td>

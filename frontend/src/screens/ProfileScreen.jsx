@@ -8,6 +8,8 @@ import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfile } from '../actions/userActions'
 import { listMyOrders } from '../actions/orderActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
+import { FaTimesCircle } from 'react-icons/fa'
+import { GiCheckMark } from 'react-icons/gi'
 
 const ProfileScreen = () => {
    const [name, setName] = useState('')
@@ -152,20 +154,14 @@ const ProfileScreen = () => {
                                     10
                                  )
                               ) : (
-                                 <i
-                                    className='fas fa-times'
-                                    style={{ color: 'red' }}
-                                 ></i>
+                                 <FaTimesCircle color='red' />
                               )}
                            </td>
                            <td>
                               {order.isDelivered ? (
                                  order.deliveredAt
                               ) : (
-                                 <i
-                                    className='fas fa-times'
-                                    style={{ color: 'red' }}
-                                 ></i>
+                                 <FaTimesCircle color='red' />
                               )}
                            </td>
                            <td>

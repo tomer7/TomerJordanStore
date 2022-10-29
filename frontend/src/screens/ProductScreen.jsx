@@ -54,7 +54,7 @@ const ProductScreen = () => {
    return (
       <>
          <Link className='btn btn-light my-3' to='/'>
-            הקודם
+            Go back
          </Link>
          {loading ? (
             <Loader />
@@ -114,8 +114,8 @@ const ProductScreen = () => {
                                  <Row>
                                     <Col>Qty</Col>
                                     <Col>
-                                       <Form.Control
-                                          as='select'
+                                       <Form.Select
+                                          style={{ border: '1px black solid' }}
                                           value={qty}
                                           onChange={(e) =>
                                              setQty(e.target.value)
@@ -130,7 +130,7 @@ const ProductScreen = () => {
                                                 {x + 1}
                                              </option>
                                           ))}
-                                       </Form.Control>
+                                       </Form.Select>
                                     </Col>
                                  </Row>
                               </ListGroup.Item>

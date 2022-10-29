@@ -4,6 +4,7 @@ import Message from '../components/Message'
 import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import { addToCart, removeFromCart } from '../actions/cartActions'
+import { FiTrash2 } from 'react-icons/fi'
 
 const CartScreen = () => {
    const params = useParams()
@@ -59,8 +60,8 @@ const CartScreen = () => {
                            </Col>
                            <Col md={2}>${item.price}</Col>
                            <Col md={2}>
-                              <Form.Control
-                                 as='select'
+                              <Form.Select
+                                 style={{ border: '1px black solid' }}
                                  value={item.qty}
                                  onChange={(e) =>
                                     dispatch(
@@ -78,7 +79,7 @@ const CartScreen = () => {
                                        </option>
                                     )
                                  )}
-                              </Form.Control>
+                              </Form.Select>
                            </Col>
                            <Col md={2}>
                               <Button
@@ -88,7 +89,10 @@ const CartScreen = () => {
                                     removeFromCartHandler(item.product)
                                  }}
                               >
-                                 <i className='fas fa-trash'></i>
+                                 <FiTrash2
+                                    color='red'
+                                    style={{ fontSize: '21px' }}
+                                 />
                               </Button>
                            </Col>
                         </Row>
