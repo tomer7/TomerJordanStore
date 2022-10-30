@@ -116,7 +116,7 @@ const Header = () => {
          if (y > window.scrollY) {
             console.log('scrolling up')
             setPositionAppBar('fixed')
-         } else if (y < window.scrollY) {
+         } else if (y < window.scrollY && window.scrollY > 50) {
             console.log('scrolling down')
             setPositionAppBar('absolute')
          }
