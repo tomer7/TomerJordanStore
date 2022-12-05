@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.21dbc89d.css",
+    "main.js": "/static/js/main.c94281c0.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/logo.jpg": "/static/media/logo.a92c19a9b4cbf4293804.jpg",
+    "static/media/pacifico-all-400-normal.woff": "/static/media/pacifico-all-400-normal.8f19c0296562a647f0a0.woff",
+    "static/media/poppins-all-400-normal.woff": "/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
+    "static/media/roboto-mono-all-400-normal.woff": "/static/media/roboto-mono-all-400-normal.615f3bbd43698e99d078.woff",
+    "static/media/poppins-devanagari-400-normal.woff2": "/static/media/poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
+    "static/media/pacifico-latin-400-normal.woff2": "/static/media/pacifico-latin-400-normal.f36bb0347eecd87d78af.woff2",
+    "static/media/pacifico-latin-ext-400-normal.woff2": "/static/media/pacifico-latin-ext-400-normal.e12a2413eb43b100497c.woff2",
+    "static/media/pacifico-cyrillic-ext-400-normal.woff2": "/static/media/pacifico-cyrillic-ext-400-normal.682f9fb5d72ef074686d.woff2",
+    "static/media/pacifico-cyrillic-400-normal.woff2": "/static/media/pacifico-cyrillic-400-normal.12b0288f7a1df3155d42.woff2",
+    "static/media/roboto-mono-cyrillic-ext-400-normal.woff2": "/static/media/roboto-mono-cyrillic-ext-400-normal.13c026e0294440303c69.woff2",
+    "static/media/roboto-mono-latin-400-normal.woff2": "/static/media/roboto-mono-latin-400-normal.d3026ee29728abffa752.woff2",
+    "static/media/pacifico-vietnamese-400-normal.woff2": "/static/media/pacifico-vietnamese-400-normal.bd5387ce81f7c383a0a3.woff2",
+    "static/media/roboto-mono-latin-ext-400-normal.woff2": "/static/media/roboto-mono-latin-ext-400-normal.22aea4e27b4b7405853a.woff2",
+    "static/media/poppins-latin-400-normal.woff2": "/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/roboto-mono-cyrillic-400-normal.woff2": "/static/media/roboto-mono-cyrillic-400-normal.a0d40ee5847af8bed2df.woff2",
+    "static/media/roboto-mono-greek-400-normal.woff2": "/static/media/roboto-mono-greek-400-normal.95e7a382e12921ef32ee.woff2",
+    "static/media/poppins-latin-ext-400-normal.woff2": "/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
+    "static/media/roboto-mono-vietnamese-400-normal.woff2": "/static/media/roboto-mono-vietnamese-400-normal.a9575edb558363648d81.woff2",
+    "index.html": "/index.html",
+    "main.21dbc89d.css.map": "/static/css/main.21dbc89d.css.map",
+    "main.c94281c0.js.map": "/static/js/main.c94281c0.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21dbc89d.css",
+    "static/js/main.c94281c0.js"
+  ]
+}
